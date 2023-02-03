@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Login Cards</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    @font-face {
+  font-family: mainFont;
+  src: url("ShareTechMono-Regular.ttf");
+}
+body {
+  font-family: mainFont;
+  color:#494b4b;
+}
+.head {
+    background-color: #4aba91;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+
+}
+.foot {
+    text-align: center;
+    background-color:#d4ce46;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    text-align: center;
+
+}
+.responsive {
+  width: 100%;
+  height: auto;
+  padding: 1em;
+}
+</style>
+</head>
+<body>
+
+
+<header>
+  <div class="head">
+    <h1>NFT as passwordless identity</h1>
+  </div>
+  
+  <h2>Features</h2>
+  <ul>
+    <li>OAUTH2 implicit and id  token flow support</li>
+    <li>Yor custom claims stored in the token`s metadata that stores in IPFS and are unchangeable</li>
+    <li>Login cards provider uses WEB3 passwordless technologies for users authorisation and check NFTs owner before issue JWT</li>
+  </ul>
+
+</header>
+
+<section>
+  
+  <article>
+    <img src="main-diagram.png" class="responsive" alt="nft login process"/>
+    <h2>How it works</h2>
+
+    <ol>
+        <li>User put "Sign up button" on your app</li>
+        <li>App redirecs user to the trusted.cards login page</li>
+        <li>User connects his wallet. login.cards creates new user and ask him sign some one time nonce. If user does not have login.card nft for your app we will mint it for user.</li>
+        <li>Login.card mint token in the Polygon chain and store metadata on the IPFS. Transaction fee for the mint optional - from users or app account wallet</li>
+        <li>Eatch login login.cards change NFT owner</li>
+        <li>And issue JWT ID/Reflash token where custom claims mapped from the NFT</li>
+        <li>Your app can use JWT and validate signature via JWKS url</li>
+    </ol>
+  </article>
+</section>
+
+<footer class="foot">
+  <p>Login.Cards 2023</p>
+</footer>
+
+</body>
+</html>
+
